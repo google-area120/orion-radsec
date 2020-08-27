@@ -1,0 +1,1 @@
+* * * * *   root    { test -x /usr/bin/docker && docker ps --filter="health=unhealthy" --format "{{.Names}}"; } | xargs -I '{}' bash -c 'kill -9 $(docker inspect {} --format "{{.State.Pid}}")'
