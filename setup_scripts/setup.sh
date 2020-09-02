@@ -14,23 +14,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+set -e
 
+sudo apt-get update
 sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
-    software-properties-common 
+    software-properties-common \
+    gnupg
 
 
-# Install some helpers for pretty-printing
-sudo apt-get -y install tree jq
+# Install some helper utilities
+sudo apt-get -y install tree jq unzip
 
 
 # Install Docker from the official repo
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+DISTRO=$(lsb_release -is | tr 'A-Z' 'a-z')
+
+curl -fsSL https://download.docker.com/linux/$DISTRO/gpg | sudo apt-key add -
 
 sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   "deb [arch=amd64] https://download.docker.com/linux/$DISTRO \
    $(lsb_release -cs) \
    stable"
 
