@@ -11,4 +11,4 @@ will build and run a docker container to encapsulate radsecproxy along with the
 required configuration files and certificates from your Orion WiFi Admin
 Console.
 
-For more information about Orion Wifi, click [here](https://orion.area120.com). You may also visit the ‘Help & Support’ tab in your [Orion WiFi](https://orionwifi.area120.com) admin console to view the latest Deployment Guide.
+For more information about Orion Wifi, click [here](https://orion.area120.com). You may also visit the ‘Help & Support’ tab in your [Orion WiFi](https://orion.area120.com) admin console to view the latest Deployment Guide.
