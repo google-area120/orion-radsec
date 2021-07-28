@@ -1,0 +1,33 @@
+version: "3.4"
+
+services:
+    rsp1:
+      image: radsec:latest
+      volumes:
+        - "./cacerts:/etc/ssl/certs/cacerts"
+        - "./cert.pem:/etc/ssl/certs/cert.pem"
+        - "./key.pem:/etc/ssl/certs/key.pem"
+        - "./config/radsecproxy.conf:/etc/radsecproxy.conf"
+      ports:
+        - 1812/udp
+        - 1813/udp
+    rsp2:
+      image: radsec:latest
+      volumes:
+        - "./cacerts:/etc/ssl/certs/cacerts"
+        - "./cert.pem:/etc/ssl/certs/cert.pem"
+        - "./key.pem:/etc/ssl/certs/key.pem"
+        - "./config/radsecproxy.conf:/etc/radsecproxy.conf"
+      ports:
+        - 1812/udp
+        - 1813/udp
+    nginx:
+      image: nginx
+      volumes:
+        - "./config/nginx.conf:/etc/nginx/nginx.conf"
+      ports:
+        - 10012:1812/udp
+        - 10013:1813/udp
+      depends_on:
+        - rsp1
+        - rsp2
