@@ -9,7 +9,7 @@ hosted here.
 This repository contains scripts used to automate the deployment process 
 
 
-For more information about Orion Wifi, click [here](https://orion.area120.com). You may also visit the ‘Help & Support’ tab in your [Orion WiFi](https://orionwifi.area120.com) admin console to view the latest Deployment Guide.
+For more information about Orion Wifi, click [here](https://orion.area120.com). You may also visit the ‘Help & Support’ tab in your [Orion WiFi](https://orionwifi.area120.com/supply/Home) admin console to view the latest Deployment Guide.
 
 
 1. `git clone https://github.com/google-area120/orion-radsec.git`
