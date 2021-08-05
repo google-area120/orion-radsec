@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build -t radsec .
+sudo docker build -t frrsp .

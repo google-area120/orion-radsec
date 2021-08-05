@@ -1,16 +1,8 @@
 FROM alpine:latest
-RUN apk update && apk upgrade && apk add openssl nettle
-RUN apk --no-cache --virtual build-dep add g++ gcc openssl-dev make nettle-dev curl
-RUN curl -Lo radsecproxy-1.9.0.tar.gz  https://github.com/radsecproxy/radsecproxy/releases/download/1.9.0/radsecproxy-1.9.0.tar.gz && \
-  tar xvf radsecproxy-1.9.0.tar.gz && \
-  rm radsecproxy-1.9.0.tar.gz &&\
-  cd radsecproxy-1.9.0 && \
-  ./configure --prefix=/ && \
-  make && \
-  make check && \
-  make install && \
-  touch /var/log/radsecproxy.log && \
-  apk del build-dep && \
-  rm -rf /radsecproxy-1.9.0
+RUN apk update && apk upgrade && apk add openssl freeradius 
+COPY --chown=radius:radius radiusd.conf /etc/raddb/radiusd.conf
+COPY --chown=radius:radius cacerts/ /etc/raddb/cacerts
+COPY --chown=radius:radius cert.pem /etc/raddb/cert.pem
+COPY --chown=radius:radius key.pem /etc/raddb/key.pem
 EXPOSE 1812:1812/udp 1812:1813/udp 
-ENTRYPOINT ["/sbin/radsecproxy","-f","-d","3"]
+CMD ["/usr/sbin/radiusd","-f","-x","-lstdout"]
