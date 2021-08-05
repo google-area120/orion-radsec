@@ -6,9 +6,7 @@ required certificates (`radsec.zip`) in the Support section of the Admin
 console.  Those certificates will be needed in combination with the script
 hosted here.
 
-This repository contains scripts used to automate the deployment process. It
-will use docker-compose to create a load-balanced cluster of radsecproxy
-instances that will connect to Google's radius endpoint.
+This repository contains scripts used to automate the deployment process 
 
 
 For more information about Orion Wifi, click [here](https://orion.area120.com). You may also visit the ‘Help & Support’ tab in your [Orion WiFi](https://orionwifi.area120.com) admin console to view the latest Deployment Guide.
@@ -22,6 +20,6 @@ For more information about Orion Wifi, click [here](https://orion.area120.com). 
 5. If your machine does not have docker, docker-compose, etc, the run
    `setup_scripts/setup.sh`
 6. Run `./build.sh` to build the radsecproxy container.
-7. `sudo docker-compose up --scale rsp1=30 --scale rsp2=30`
+7. `sudo docker run frrsp`
 
 Your instance should now be running.
