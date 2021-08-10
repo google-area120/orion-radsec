@@ -16,10 +16,10 @@ For more information about Orion Wifi, click [here](https://orion.area120.com). 
 2. Download your certificate zipfile from the Orion Supplier console. This file
    will be called `radsec.zip`.
 3. ` cd orion-radsec && mv <path to your radsec.zip> .`
-4. unzip radsec.zip
+4. `unzip -n radsec.zip`
 5. If your machine does not have docker, docker-compose, etc, the run
    `setup_scripts/setup.sh`
 6. Run `./build.sh` to build the radsecproxy container.
-7. `sudo docker run frrsp`
+7. Run the start script `./run.sh`
 
 Your instance should now be running.
