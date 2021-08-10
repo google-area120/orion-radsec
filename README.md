@@ -21,5 +21,17 @@ For more information about Orion Wifi, click [here](https://orion.area120.com). 
    `setup_scripts/setup.sh`
 6. Run `./build.sh` to build the radsecproxy container.
 7. Run the start script `./run.sh`
+The result should be:
+
+```
+~/orion-radsec$ ./run.sh
+0eaf3f3d57fd6a406a898845ca72689f2fe79f6d8009ded5e414433efff6bc59
+~/orion-radsec$ sudo docker logs 0eaf
+Tue Aug 10 12:58:10 2021 : Info: Starting - reading configuration files ...
+Tue Aug 10 12:58:10 2021 : Info: Found debugger attached
+Tue Aug 10 12:58:10 2021 : Info: Loaded virtual server <default>
+Tue Aug 10 12:58:10 2021 : Info: Loaded virtual server default
+Tue Aug 10 12:58:10 2021 : Info: Ready to process requests
+```
 
 Your instance should now be running.
