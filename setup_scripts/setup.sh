@@ -35,7 +35,7 @@ sudo add-apt-repository \
    stable"
 
 sudo apt-get update
-sudo apt-get -y install docker-ce docker-ce-cli containerd.io
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose
 # add current user to docker group so there is no need to use sudo when running docker
 sudo usermod -aG docker $(whoami)
 
@@ -54,8 +54,5 @@ then
     sudo systemctl start docker
 fi
 
-
-# Docker doesn't currently restart unhealthy containers, so we need to do this
-sudo cp `dirname $0`/CRON.docker-restart-unhealthy-containers /etc/cron.d/docker-restart-unhealthy-containers
 
 echo "Installation Completed"
