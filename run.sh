@@ -2,6 +2,8 @@
 
 pwd=`pwd`
 
+sudo docker build -t frrsp .
+
 sudo docker run  \
     -d --restart=unless-stopped \
     -p 1812-1813:1812-1813/udp \
