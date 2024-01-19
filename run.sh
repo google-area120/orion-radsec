@@ -1,13 +1,26 @@
 #!/bin/bash
 
-pwd=`pwd`
+IMAGE_NAME="frrsp"
+CONTAINER_NAME="radsecproxy"
+CERT_PATH=$(pwd)/cert.pem
+KEY_PATH=$(pwd)/key.pem
 
-sudo docker build -t frrsp .
+# Stop and remove the existing container (if it exists)
+sudo docker stop $CONTAINER_NAME
+sudo docker rm $CONTAINER_NAME
 
+# Remove the existing image (if it exists)
+sudo docker rmi $IMAGE_NAME
+
+# Build the new image
+sudo docker build -t $IMAGE_NAME .
+
+# Run the new container
 sudo docker run  \
     -d --restart=unless-stopped \
+    --network host \
     -p 1812-1813:1812-1813/udp \
-    -v $pwd/cert.pem:/etc/raddb/cert.pem \
-    -v $pwd/key.pem:/etc/raddb/key.pem \
-    frrsp
-
+    -v $CERT_PATH:/etc/raddb/cert.pem \
+    -v $KEY_PATH:/etc/raddb/key.pem \
+    --name $CONTAINER_NAME \
+    $IMAGE_NAME
