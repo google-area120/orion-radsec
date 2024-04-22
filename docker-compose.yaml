@@ -1,11 +1,14 @@
 version: "3.4"
 
 services:
-    frrsp:
-      image: frrsp
-      volumes:
-        - "./cert.pem:/etc/raddb/cert.pem"
-        - "./key.pem:/etc/raddb/key.pem"
-      ports:
-        - 1812/udp
-        - 1813/udp
+  frrsp:
+    container_name: radsecproxy
+    image: frrsp
+    network_mode: host
+    volumes:
+      - "./cert.pem:/etc/raddb/cert.pem"
+      - "./key.pem:/etc/raddb/key.pem"
+    ports:
+      - "1812:1812/udp"
+      - "1813:1813/udp"
+    restart: unless-stopped
