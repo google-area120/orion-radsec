@@ -1,6 +1,7 @@
 # Orion Radsecproxy docker setup
 
-For more information about Orion Wifi, click [here](https://orion.google). 
+For more information about Orion Wifi, click [here](https://orion.google) or visit the [Orion Wifi Help Center](https://support.google.com/orion-wifi).
+
 
 In order to deploy Orion Wifi, you must either have a wireless controller that
 supports native Radsec or deploy a Radsec proxy. Orion Wifi provides the
@@ -8,7 +9,6 @@ required certificates (`radsec.zip`) in the Support section of the Admin
 console.  Those certificates will be needed in combination with the script
 hosted here.
 
-You may also visit the [Orion Wifi Help Center](https://support.google.com/orion-wifi) to view the latest Deployment Guide.
 
 
 1. `git clone https://github.com/google-area120/orion-radsec.git`
