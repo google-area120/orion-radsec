@@ -2,8 +2,6 @@
 
 pwd=`pwd`
 
-sudo c_rehash cacerts/
-
 sudo docker build -t frrsp .
 
 sudo docker run  \
