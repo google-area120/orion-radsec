@@ -30,3 +30,6 @@ Wed Jan 29 00:57:59 2025 : Info: Ready to process requests
 ```
 
 Your instance should now be running.
+
+Configure your wireless controller to use orion-radsecproxy as a standard RADIUS server.
+All authentication requests will then be automatically converted to RadSec and forwarded to Orion.
