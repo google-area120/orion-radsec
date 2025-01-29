@@ -5,6 +5,8 @@ For more information about Orion Wifi, click [here](https://orion.google) or vis
 To use Orion Wifi, you'll need either a wireless controller with native RadSec support or a RadSec proxy.  
 If your controller lacks native RadSec, you can use this project along with your unique `radsec.zip` file from Orion to enable it.
 
+To install:
+
 1. `git clone https://github.com/google-area120/orion-radsec.git`
 1. Download your certificate bundle:
    * Open [Orion Supply](https://orion.google/supply/Home)
