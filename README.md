@@ -10,7 +10,6 @@ console.  Those certificates will be needed in combination with the script
 hosted here.
 
 
-
 1. `git clone https://github.com/google-area120/orion-radsec.git`
 1. Download your certificate bundle:
    * Open [Orion Supply](https://orion.google/supply/Home)
